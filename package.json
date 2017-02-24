@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-alura",
+  "version": "1.0.0",
+  "description": "Curso de Node.js da Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocaquino/nodejs-alura.git"
+  },
+  "keywords": [
+    "alura",
+    "nodejs",
+    "express",
+    "javascript",
+    "ejs"
+  ],
+  "author": "Gustavo Aquino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavocaquino/nodejs-alura/issues"
+  },
+  "homepage": "https://github.com/gustavocaquino/nodejs-alura#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1"
+  }
+}

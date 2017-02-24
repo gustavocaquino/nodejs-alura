@@ -1,17 +1,11 @@
+var connectionFactory = require('../../infra/connectionFactory');
+
 module.exports = function (app) {
     // Expõe as rotas e a view que responderá.
     app.get('/produtos', function (request, response) {
 
-        // Invoca a biblioteca para Mysql.
-        // var mysql = require('mysql');
-
-        // Configura a conexão.
-        // var connection = mysql.createConnection({
-        //    host: 'localhost',
-        //    user: 'root',
-        //    password: '',
-        //    database: ''
-        // });
+        // Conexão com o banco de dados.
+        //var connection = connectionFactory();
 
         // connection.query('SELECT * FROM table', function(error, results) {
         //     response.render('produtos/lista', {

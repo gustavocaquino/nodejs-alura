@@ -5,6 +5,6 @@ var app = require('./config/express')();
 var rotasProdutos = require('./app/routes/produtos')(app);
 
 // Inicia propriamente o WebServer.
-app.listen(3000, function() {
-   console.log('webserver rodando.');
+app.listen(3000, function () {
+    console.log('webserver rodando.');
 });

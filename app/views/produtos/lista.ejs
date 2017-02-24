@@ -1,1 +1,18 @@
 <h1>Lista de produtos</h1>
+<br />
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Título do Livro</td>
+        </tr>
+    <thead>
+    <tbody>
+        <% for(var i = 0; i < lista.length; i++) { %>
+            <tr>
+                <td><%= lista[i].id %></td>
+                <td><%= lista[i].titulo %></td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

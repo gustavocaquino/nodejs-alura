@@ -6,6 +6,16 @@ module.exports = function (app) {
         // da biblioteca Load.
         //var connection = app.infra.connectionFactory();
 
+        // O uso da palavra-chave new é usada para definir um novo escopo de classe
+        // dessa forma, as chamadas com this dentro do objeto referido será de escopo local
+        // ao contexto do objeto.
+        //var produtosBanco = new app.infra.ProdutosDAO(connection);
+
+        // Implementação da busca de produtos encapsulada.
+        //produtosBanco.lista(function (erros, resultados) {
+            //
+        //});
+
         //connection.query('SELECT * FROM table', function(error, results) {
         //    response.render('produtos/lista', {
         //        lista: results

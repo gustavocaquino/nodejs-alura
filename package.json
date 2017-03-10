@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/gustavocaquino/nodejs-alura#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "ejs": "^2.5.6",
     "express": "^4.14.1",
     "express-load": "^1.1.15",

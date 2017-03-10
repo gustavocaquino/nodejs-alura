@@ -20,6 +20,9 @@ module.exports = function () {
     // Recebe funções que serão aplicadas no request na ordem em que forem definidas (middleware).
     app.use(bodyParser.urlencoded({extended: true}));
 
+    // Permite que requisições json sejam enviadas para os endpoints.
+    //app.use(bodyParser.json());
+
     // Inicializa o Load dentro do Express carregando,
     // o conteúdo da pasta Infra.
     load('routes', {

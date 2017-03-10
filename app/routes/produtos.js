@@ -13,13 +13,13 @@ module.exports = function (app) {
 
         // Implementação da busca de produtos encapsulada.
         produtosDAO.lista(function (erros, resultados) {
-            res.render('produtos/lista', {lista: resultados});
+            res.render('produtos/lista', { lista: resultados });
         });
 
-        connection.query('SELECT * FROM table', function(error, results) {
-           response.render('produtos/lista', {
-               lista: results
-           });
+        connection.query('SELECT * FROM table', function (error, results) {
+            response.render('produtos/lista', {
+                lista: results
+            });
         });
 
         //Finaliza a conexão com o banco de dados.
@@ -28,19 +28,39 @@ module.exports = function (app) {
 
     // Expõe as rotas e a view que responderá.
     app.get('/produtos', function (request, response) { // function (request, listaProdutos);
-        response.render('produtos/lista', {
-            lista:
-            [{
-                id: 1,
-                titulo: "Senhor do Anéis"
-            }, {
-                id: 2,
-                titulo: "Game of Thrones"
-            }, {
-                id: 3,
-                titulo: "Homem-Aranha 2099"
-            }]
+
+        // Content-Negotiation text/html e application/json
+        response.format({
+            html: function () {
+                response.render('produtos/lista', {
+                    lista:
+                    [{
+                        id: 1,
+                        titulo: "Senhor do Anéis"
+                    }, {
+                        id: 2,
+                        titulo: "Game of Thrones"
+                    }, {
+                        id: 3,
+                        titulo: "Homem-Aranha 2099"
+                    }]
+                });
+            },
+            json: function () {
+                response.json({lista:
+                    [{
+                        id: 1,
+                        titulo: "Senhor do Anéis"
+                    }, {
+                        id: 2,
+                        titulo: "Game of Thrones"
+                    }, {
+                        id: 3,
+                        titulo: "Homem-Aranha 2099"
+                    }]});
+            }
         });
+
     });
 
     // Nova rota GET para o formulário.
@@ -60,8 +80,8 @@ module.exports = function (app) {
         var produtosDAO = new app.infra.ProdutosDAO(connection);
 
         //produtosDAO.salva(produto, function (erros, response) {
-            // Padrão PRG.
-            response.redirect('/produtos');
+        // Padrão PRG.
+        response.redirect('/produtos');
         //});
     });
 }
